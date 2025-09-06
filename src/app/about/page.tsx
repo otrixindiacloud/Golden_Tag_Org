@@ -4,9 +4,10 @@ import { Metadata } from "next";
 
 export default function About() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-white dark:bg-black">
+      <div className="fixed inset-0 -z-10 bg-white dark:bg-black" aria-hidden="true"></div>
             {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 py-20 overflow-hidden">
+  <section className="relative bg-white dark:bg-black py-20 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-r from-yellow-400 to-amber-500 rounded-full blur-3xl"></div>
@@ -33,7 +34,7 @@ export default function About() {
       </section>
 
       {/* Company Story Section */}
-      <section className="py-20 bg-background">
+  <section className="py-20 bg-white dark:bg-black">
         <div className="golden-tag-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Company Story */}
@@ -96,7 +97,7 @@ export default function About() {
       </section>
 
             {/* Values Section */}
-      <section className="py-20 bg-gradient-to-br from-yellow-50 to-amber-50">
+  <section className="py-20 bg-white dark:bg-black">
         <div className="golden-tag-container">
           <div className="text-center mb-16">
             <span className="bg-gradient-to-r from-yellow-500 to-amber-500 bg-clip-text text-transparent font-semibold text-sm uppercase tracking-wider">Our Values</span>
@@ -155,34 +156,33 @@ export default function About() {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-20 bg-gradient-to-br from-yellow-50/50 to-amber-50/50">
-        <div className="golden-tag-container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Mission */}
-            <div className="text-center lg:text-left">
-              <div className="w-20 h-20 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-2xl flex items-center justify-center mx-auto lg:mx-0 mb-6 shadow-lg">
-                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <section className="py-20 bg-white dark:bg-black flex justify-center">
+  <div className="bg-white dark:bg-black rounded-xl shadow-lg max-w-5xl w-full px-6 py-10 flex flex-col items-center border-2 border-yellow-200 dark:border-neutral-700">
+          <div className="flex flex-col lg:flex-row w-full gap-8 lg:gap-0 justify-center items-center">
+            {/* Mission Card */}
+            <div className="flex-1 flex flex-col items-center text-center px-6 py-4">
+              <div className="w-14 h-14 bg-gradient-to-r from-yellow-500 to-amber-500 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
-              <h2 className="text-3xl font-bold text-foreground mb-6">Our Mission</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <h2 className="text-2xl font-bold text-black dark:text-white mb-4">Our Mission</h2>
+              <p className="text-base text-muted-foreground text-black dark:text-white leading-relaxed">
                 To provide exceptional gifts that strengthen business relationships, 
                 enhance brand recognition, and create meaningful connections between companies 
                 and their stakeholders across the Kingdom of Bahrain.
               </p>
             </div>
-
-            {/* Vision */}
-            <div className="text-center lg:text-left">
-              <div className="w-20 h-20 bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto lg:mx-0 mb-6 shadow-lg">
-                <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {/* Vision Card */}
+            <div className="flex-1 flex flex-col items-center text-center px-6 py-4">
+              <div className="w-14 h-14 bg-gradient-to-r from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                 </svg>
               </div>
-              <h2 className="text-3xl font-bold text-foreground mb-6">Our Vision</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <h2 className="text-2xl font-bold text-black dark:text-white mb-4">Our Vision</h2>
+              <p className="text-base text-muted-foreground text-black dark:text-white leading-relaxed">
                 To become the leading corporate gifting partner in the Middle East, 
                 recognized for our innovation, quality, and ability to transform business relationships 
                 through meaningful and memorable gifts.
@@ -192,9 +192,9 @@ export default function About() {
         </div>
       </section>
 
-      {/* Statistics Section */}
-      <section className="py-20 bg-gradient-to-r from-yellow-500 via-amber-500 to-orange-500 text-white">
-        <div className="golden-tag-container">
+    {/* Statistics Section */}
+    <section className="py-20">
+  <div className="golden-tag-container text-center">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Our Impact in Numbers</h2>
             <p className="text-xl opacity-90 max-w-3xl mx-auto">
@@ -203,19 +203,19 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
+            <div>
               <div className="text-4xl md:text-5xl font-bold mb-2">500+</div>
               <div className="text-lg opacity-90">Corporate Clients</div>
             </div>
-            <div className="text-center">
+            <div>
               <div className="text-4xl md:text-5xl font-bold mb-2">50K+</div>
               <div className="text-lg opacity-90">Gifts Delivered</div>
             </div>
-            <div className="text-center">
+            <div>
               <div className="text-4xl md:text-5xl font-bold mb-2">98%</div>
               <div className="text-lg opacity-90">Client Satisfaction</div>
             </div>
-            <div className="text-center">
+            <div>
               <div className="text-4xl md:text-5xl font-bold mb-2">24/7</div>
               <div className="text-lg opacity-90">Support Available</div>
             </div>
@@ -310,8 +310,8 @@ export default function About() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-br from-yellow-50 to-amber-50">
-        <div className="golden-tag-container">
+  <section className="py-20 bg-gradient-to-br from-yellow-50 to-amber-50 dark:bg-black dark:bg-none">
+  <div className="golden-tag-container bg-transparent dark:bg-black">
           <div className="text-center mb-16">
             <span className="bg-gradient-to-r from-yellow-500 to-amber-500 bg-clip-text text-transparent font-semibold text-sm uppercase tracking-wider">Client Testimonials</span>
             <h2 className="text-4xl font-bold text-foreground mt-2 mb-6">
@@ -324,7 +324,7 @@ export default function About() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Testimonial 1 */}
-            <div className="bg-background p-8 rounded-2xl shadow-lg border border-yellow-100">
+            <div className="bg-background dark:bg-black p-8 rounded-2xl shadow-lg border border-yellow-100 dark:border-neutral-700">
               <div className="flex items-center mb-4">
                 <div className="flex text-yellow-400">
                   {[...Array(5)].map((_, i) => (
@@ -349,7 +349,7 @@ export default function About() {
             </div>
 
             {/* Testimonial 2 */}
-            <div className="bg-background p-8 rounded-2xl shadow-lg border border-yellow-100">
+            <div className="bg-background dark:bg-black p-8 rounded-2xl shadow-lg border border-yellow-100 dark:border-neutral-700">
               <div className="flex items-center mb-4">
                 <div className="flex text-yellow-400">
                   {[...Array(5)].map((_, i) => (
@@ -374,7 +374,7 @@ export default function About() {
             </div>
 
             {/* Testimonial 3 */}
-            <div className="bg-background p-8 rounded-2xl shadow-lg border border-yellow-100">
+            <div className="bg-background dark:bg-black p-8 rounded-2xl shadow-lg border border-yellow-100 dark:border-neutral-700">
               <div className="flex items-center mb-4">
                 <div className="flex text-yellow-400">
                   {[...Array(5)].map((_, i) => (
@@ -402,7 +402,7 @@ export default function About() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-20 bg-gradient-to-r from-yellow-500 via-amber-500 to-orange-500 text-white">
+      <section className="py-20">
         <div className="golden-tag-container text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -414,13 +414,13 @@ export default function About() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
                 href="/contact" 
-                className="bg-white text-amber-600 px-8 py-4 rounded-xl font-semibold hover:bg-white/90 transition-colors duration-200 btn-hover"
+                className="bg-amber-500 text-white px-8 py-4 rounded-xl font-semibold hover:bg-amber-600 transition-colors duration-200 btn-hover"
               >
                 Get Started Today
               </a>
               <a 
                 href="/products" 
-                className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold hover:bg-white hover:text-amber-600 transition-colors duration-200"
+                className="border-2 border-amber-500 text-amber-500 px-8 py-4 rounded-xl font-semibold hover:bg-amber-50 hover:text-amber-600 transition-colors duration-200"
               >
                 View Our Products
               </a>

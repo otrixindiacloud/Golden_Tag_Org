@@ -476,17 +476,17 @@ export default function Products() {
   };
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-white dark:bg-black">
       {/* Page Header */}
-      <section className="bg-muted py-16">
-        <div className="golden-tag-container">
+      <section className="bg-muted dark:bg-black py-16">
+        <div className="golden-tag-container dark:bg-black">
           <div className="flex justify-center mb-8">
             <div className="text-4xl font-bold text-amber-600">
               STORE
             </div>
           </div>
-          <h1 className="golden-tag-heading">Gifts Collection</h1>
-          <p className="text-center text-muted-foreground text-lg max-w-2xl mx-auto mb-6">
+          <h1 className="golden-tag-heading text-black dark:text-white">Gifts Collection</h1>
+          <p className="text-center text-muted-foreground dark:text-gray-300 text-lg max-w-2xl mx-auto mb-6">
             Premium gifts and giveaways that make lasting impressions. Perfect for business relationships, employee recognition, and client appreciation.
           </p>
           <div className="flex justify-center">
@@ -498,8 +498,8 @@ export default function Products() {
       </section>
 
       {/* Enhanced Filters and Search */}
-      <section className="bg-gradient-to-r from-amber-50 to-orange-50 py-12 border-b border-amber-200">
-        <div className="golden-tag-container">
+      <section className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-black dark:to-black py-12 border-b border-amber-200 dark:border-gray-800">
+        <div className="golden-tag-container dark:bg-black">
           {/* Search Bar */}
           <div className="flex justify-center mb-8">
             <div className="relative w-full max-w-2xl">
@@ -508,7 +508,7 @@ export default function Products() {
                 placeholder="Search products..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-4 pr-12 py-4 border-2 border-amber-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-lg font-semibold shadow-lg"
+                className="w-full pl-4 pr-12 py-4 border-2 border-amber-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent text-lg font-semibold shadow-lg bg-white dark:bg-gray-900 text-black dark:text-white"
               />
               <div className="absolute inset-y-0 right-0 flex items-center pr-4">
                 <svg className="h-6 w-6 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -520,8 +520,8 @@ export default function Products() {
 
           {/* Category Filter */}
           <div className="text-center mb-6">
-            <h3 className="text-2xl font-bold text-amber-800 mb-2">Browse by Category</h3>
-            <p className="text-amber-700">Select a category to explore our premium products</p>
+            <h3 className="text-2xl font-bold text-amber-800 dark:text-amber-400 mb-2">Browse by Category</h3>
+            <p className="text-amber-700 dark:text-amber-200">Select a category to explore our premium products</p>
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4">
@@ -532,7 +532,7 @@ export default function Products() {
                 className={`group relative p-4 rounded-xl border-2 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 ${
                   selectedCategory === category.id
                     ? 'bg-gradient-to-br from-amber-500 to-orange-600 text-white border-amber-500 shadow-xl'
-                    : 'bg-white text-amber-800 border-amber-200 hover:border-amber-400 hover:shadow-lg'
+                    : 'bg-white dark:bg-gray-900 text-amber-800 dark:text-amber-200 border-amber-200 dark:border-gray-700 hover:border-amber-400 hover:shadow-lg'
                 }`}
               >
                 <div className="text-center">
@@ -545,15 +545,14 @@ export default function Products() {
                   <div className={`text-xs px-2 py-1 rounded-full ${
                     selectedCategory === category.id
                       ? 'bg-white/20 text-white'
-                      : 'bg-amber-100 text-amber-700'
+                      : 'bg-amber-100 dark:bg-gray-800 text-amber-700 dark:text-amber-200'
                   }`}>
                     {category.count} items
                   </div>
                 </div>
-                
                 {/* Active indicator */}
                 {selectedCategory === category.id && (
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-lg">
+                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-white dark:bg-gray-900 rounded-full flex items-center justify-center shadow-lg">
                     <svg className="w-4 h-4 text-amber-600" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
@@ -565,12 +564,12 @@ export default function Products() {
 
           {/* Results Summary */}
           <div className="text-center mt-8">
-            <div className="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-lg border border-amber-200">
-              <span className="text-amber-600 font-semibold">
+            <div className="inline-flex items-center gap-2 bg-white dark:bg-gray-900 px-6 py-3 rounded-full shadow-lg border border-amber-200 dark:border-gray-700">
+              <span className="text-amber-600 dark:text-amber-200 font-semibold">
                 {filteredProducts.length} {filteredProducts.length === 1 ? 'product' : 'products'} found
               </span>
               {selectedCategory !== "all" && (
-                <span className="text-gray-500">
+                <span className="text-gray-500 dark:text-gray-300">
                   in {categoriesWithCounts.find(c => c.id === selectedCategory)?.name}
                 </span>
               )}
@@ -580,8 +579,8 @@ export default function Products() {
       </section>
 
       {/* Products Grid */}
-      <section className="bg-gradient-to-b from-white to-gray-50 py-16">
-        <div className="golden-tag-container">
+      <section className="bg-gradient-to-b from-white to-gray-50 dark:from-black dark:to-gray-900 py-16">
+        <div className="golden-tag-container dark:bg-black">
           {filteredProducts.length === 0 ? (
             <div className="text-center py-16">
               <div className="w-24 h-24 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -627,11 +626,11 @@ export default function Products() {
                 <a
                   key={product.id}
                   href={`/products/productpage?id=${product.id}`}
-                  className="block bg-white border-2 border-gray-100 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 group hover:border-amber-200 hover:-translate-y-2"
+                  className="block bg-white dark:bg-gray-900 border-2 border-gray-100 dark:border-gray-800 rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 group hover:border-amber-200 dark:hover:border-amber-400 hover:-translate-y-2"
                   style={{ textDecoration: 'none' }}
                 >
                   {/* Product Image */}
-                  <div className="aspect-square bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center relative overflow-hidden">
+                    <div className="aspect-square bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-black flex items-center justify-center relative overflow-hidden">
                     <img 
                       src={product.image} 
                       alt={product.name}
@@ -662,22 +661,22 @@ export default function Products() {
                       </span>
                       <span className="text-amber-600 text-xs font-bold bg-amber-50 px-2 py-1 rounded">STORE</span>
                     </div>
-                    <h3 className="text-lg font-bold text-gray-800 mb-2 group-hover:text-amber-600 transition-colors line-clamp-2">{product.name}</h3>
-                    <p className="text-gray-600 text-sm mb-4 line-clamp-2">{product.description}</p>
+                    <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-2 group-hover:text-amber-600 transition-colors line-clamp-2">{product.name}</h3>
+                    <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">{product.description}</p>
                     {/* Rating */}
                     <div className="flex items-center mb-4">
                       <div className="flex mr-2">
                         {renderStars(product.rating)}
                       </div>
-                      <span className="text-sm text-gray-500">({product.reviews} reviews)</span>
+                      <span className="text-sm text-gray-500 dark:text-gray-400">({product.reviews} reviews)</span>
                     </div>
                     {/* Price and Stock */}
                     <div className="flex items-center justify-between mb-4">
-                      <span className="text-2xl font-bold text-amber-600">${product.price}</span>
+                      <span className="text-2xl font-bold text-amber-600 dark:text-amber-400">${product.price}</span>
                       <span className={`text-sm font-medium px-2 py-1 rounded-full ${
                         product.inStock 
-                          ? 'bg-green-100 text-green-700 border border-green-200' 
-                          : 'bg-red-100 text-red-700 border border-red-200'
+                          ? 'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-200 border border-green-200 dark:border-green-700' 
+                          : 'bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-200 border border-red-200 dark:border-red-700'
                       }`}>
                         {product.inStock ? '✓ In Stock' : '✗ Out of Stock'}
                       </span>
@@ -693,36 +692,36 @@ export default function Products() {
       </section>
 
       {/* Corporate Gifts Brand Section */}
-      <section className="bg-amber-50 border-t border-amber-200 py-16">
-        <div className="golden-tag-container">
+      <section className="bg-amber-50 dark:bg-black border-t border-amber-200 dark:border-gray-800 py-16">
+        <div className="golden-tag-container dark:bg-black">
           <div className="text-center">
             <div className="flex justify-center mb-6">
               <div className="text-4xl font-bold text-amber-600">
                 STORE
               </div>
             </div>
-            <h3 className="text-2xl font-bold text-foreground mb-4">Why Choose Us?</h3>
+            <h3 className="text-2xl font-bold text-foreground dark:text-white mb-4">Why Choose Us?</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
               <div className="text-center">
                 <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-white text-2xl">🏆</span>
                 </div>
-                <h4 className="font-semibold text-foreground mb-2">Premium Quality</h4>
-                <p className="text-muted-foreground text-sm">Handpicked products that meet the highest standards</p>
+                <h4 className="font-semibold text-foreground dark:text-white mb-2">Premium Quality</h4>
+                <p className="text-muted-foreground dark:text-gray-300 text-sm">Handpicked products that meet the highest standards</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-white text-2xl">🎁</span>
                 </div>
-                <h4 className="font-semibold text-foreground mb-2">Custom Branding</h4>
-                <p className="text-muted-foreground text-sm">Professional branding services for your corporate identity</p>
+                <h4 className="font-semibold text-foreground dark:text-white mb-2">Custom Branding</h4>
+                <p className="text-muted-foreground dark:text-gray-300 text-sm">Professional branding services for your corporate identity</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-white text-2xl">🌟</span>
                 </div>
-                <h4 className="font-semibold text-foreground mb-2">Trusted Since 2015</h4>
-                <p className="text-muted-foreground text-sm">Serving leading multinational companies in Bahrain</p>
+                <h4 className="font-semibold text-foreground dark:text-white mb-2">Trusted Since 2015</h4>
+                <p className="text-muted-foreground dark:text-gray-300 text-sm">Serving leading multinational companies in Bahrain</p>
               </div>
             </div>
             <div className="mt-8">

@@ -85,11 +85,11 @@ export default function Header() {
             >
               <Link href="/" className="flex items-center" style={{ marginLeft: '-105px'}}>
                 <Image
-                  src="/WhatsApp Image 2025-09-02 at 13.23.47_d30ef7bb.jpg"
+                  src="/WhatsApp_Image_2025-09-02_at_13__1_-removebg-preview.png"
                   alt="Golden Tag Corporate Gifts"
                   width={300}
                   height={120}
-                  className="h-20 w-auto"
+                  className="h-20 w-auto dark:invert"
                   priority
                 />
               </Link>
@@ -273,9 +273,6 @@ export default function Header() {
                 >
                   <Link href="/login" className="hidden sm:inline-block px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors duration-200 font-medium text-sm mr-2">
                     Sign In
-                  </Link>
-                  <Link href="/register" className="hidden sm:inline-block px-4 py-2 bg-gradient-to-r from-orange-500 to-yellow-500 text-white rounded-md hover:from-orange-600 hover:to-yellow-600 transition-colors duration-200 font-medium text-sm">
-                    Sign Up
                   </Link>
                 </motion.div>
               )}

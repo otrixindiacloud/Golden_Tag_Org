@@ -243,7 +243,7 @@ export default function IndustriesSection() {
               STORE
             </div>
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">
             BROWSE BY INDUSTRIES
           </h2>
           <p className="text-amber-600 font-medium text-lg">

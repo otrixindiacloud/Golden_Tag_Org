@@ -618,7 +618,7 @@ export default function RegisterPage() {
               </motion.div>
 
               <div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">Welcome to Golden Tag!</h3>
+                <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-2">Welcome to Golden Tag!</h3>
                 <p className="text-gray-600">
                   Your account has been created successfully. You can now access exclusive corporate gifts and personalized catalogs.
                 </p>

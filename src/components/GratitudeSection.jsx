@@ -57,7 +57,7 @@ export default function GratitudeSection() {
             </div>
           </div>
           <div className="w-24 h-1 bg-amber-500 mx-auto mb-6"></div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">
             A LITTLE GRATITUDE GOES A LONG WAY
           </h2>
           <p className="text-amber-600 font-medium text-lg">

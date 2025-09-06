@@ -1,0 +1,30 @@
+/* Golden Tag Logo Styles */
+.golden-tag-logo {
+  transition: color 0.3s ease;
+}
+
+/* Light mode - black text */
+.golden-tag-logo .logo-text,
+.golden-tag-logo .logo-subtitle {
+  color: #000000;
+}
+
+/* Dark mode - white text */
+.dark .golden-tag-logo .logo-text,
+.dark .golden-tag-logo .logo-subtitle {
+  color: #ffffff;
+}
+
+/* Alternative approach using CSS custom properties */
+:root {
+  --logo-text-color: #000000;
+}
+
+.dark {
+  --logo-text-color: #ffffff;
+}
+
+.golden-tag-logo-v2 .logo-text,
+.golden-tag-logo-v2 .logo-subtitle {
+  fill: var(--logo-text-color);
+}

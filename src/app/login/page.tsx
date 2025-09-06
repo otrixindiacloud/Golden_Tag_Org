@@ -136,7 +136,7 @@ export default function LoginPage() {
         {/* Header */}
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-800 mb-2">Welcome Back</h1>
-          <p className="text-gray-600">Sign in to your Golden Tag account</p>
+          <p className="text-gray-600 dark:text-gray-300">Sign in to your Golden Tag account</p>
         </div>
 
         {/* Login Options */}
@@ -187,31 +187,12 @@ export default function LoginPage() {
 
         {/* Divider */}
         <div className="my-8 flex items-center">
-          <div className="flex-1 border-t border-gray-300"></div>
-          <span className="px-4 text-gray-500 text-sm">or</span>
-          <div className="flex-1 border-t border-gray-300"></div>
+          {/* Removed 'or' divider */}
         </div>
 
-        {/* Guest Access */}
-        <div className="text-center">
-          <p className="text-gray-600 mb-4">Don't have an account?</p>
-          <a 
-            href="/register"
-            className="text-amber-600 hover:text-amber-700 font-medium transition-colors duration-200"
-          >
-            Create Account with OTP
-          </a>
-        </div>
+  {/* Removed Guest Access and Create Account with OTP */}
 
-        {/* Email Login Option */}
-        <div className="text-center mt-4">
-          <button 
-            onClick={() => setShowLoginModal(true)}
-            className="text-gray-600 hover:text-gray-800 font-medium transition-colors duration-200"
-          >
-            Sign in with Email
-          </button>
-        </div>
+  {/* Removed Email Login Option */}
 
         {/* Phone Modal */}
         {showPhoneModal && (
