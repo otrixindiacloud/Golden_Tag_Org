@@ -1,20 +1,23 @@
 'use client';
 
 import { initializeApp, getApps, getApp, type FirebaseApp } from 'firebase/app';
+import { getAnalytics, type Analytics } from 'firebase/analytics';
 import { getAuth, GoogleAuthProvider, FacebookAuthProvider, type Auth } from 'firebase/auth';
 
 // In production, prefer environment variables. Using provided config for now.
 const firebaseConfig = {
-  apiKey: 'AIzaSyBm3zu1JjTYw6N-pARwN5hPwxCGmhfb3MM',
-  authDomain: 'golden-tag-526f6.firebaseapp.com',
-  projectId: 'golden-tag-526f6',
-  storageBucket: 'golden-tag-526f6.firebasestorage.app',
-  messagingSenderId: '336114555270',
-  appId: '1:336114555270:web:9a856d528a6fdd52a37407',
-  measurementId: 'G-QZY4H1R8H5',
+  apiKey: "AIzaSyDZFPkBjHK3eOvBTVWiqAq4VxZz4DrO2e4",
+  authDomain: "goldentag72230.firebaseapp.com",
+  projectId: "goldentag72230",
+  storageBucket: "goldentag72230.firebasestorage.app",
+  messagingSenderId: "536768136779",
+  appId: "1:536768136779:web:03f1b8a07fafae210c2fce",
+  measurementId: "G-C5C85JYH1T"
 };
 
+
 let app: FirebaseApp;
+let analytics: Analytics | undefined;
 let auth: Auth;
 let googleProvider: GoogleAuthProvider;
 let facebookProvider: FacebookAuthProvider;
@@ -22,10 +25,27 @@ let facebookProvider: FacebookAuthProvider;
 export function getFirebaseApp(): FirebaseApp {
   if (!getApps().length) {
     app = initializeApp(firebaseConfig);
+    try {
+      analytics = getAnalytics(app);
+    } catch (e) {
+      // getAnalytics only works in browser environments with window object
+      analytics = undefined;
+    }
   } else {
     app = getApp();
   }
   return app;
+}
+
+export function getFirebaseAnalytics(): Analytics | undefined {
+  if (!analytics) {
+    try {
+      analytics = getAnalytics(app ?? getFirebaseApp());
+    } catch (e) {
+      analytics = undefined;
+    }
+  }
+  return analytics;
 }
 
 export function getFirebaseAuth(): Auth {
@@ -52,5 +72,4 @@ export function getFacebookProvider(): FacebookAuthProvider {
   }
   return facebookProvider;
 }
-
 
