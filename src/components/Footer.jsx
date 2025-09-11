@@ -103,33 +103,22 @@ export default function Footer() {
                     };
 
                     const getHoverColor = (name) => {
-                      switch (name) {
-                        case "Facebook":
-                          return "hover:text-blue-400";
-                        case "Twitter":
-                          return "hover:text-blue-400";
-                        case "Instagram":
-                          return "hover:text-pink-400";
-                        default:
-                          return "hover:text-white";
-                      }
+                      return "";
                     };
 
                     return (
                       <li key={linkIndex}>
-                        <motion.a
+                        <a
                           href={link.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-muted-foreground hover:text-secondary-foreground transition-colors duration-200 text-sm flex items-center space-x-2"
-                          whileHover={{ x: 5 }}
-                          transition={{ duration: 0.2 }}
+                          className="text-muted-foreground transition-colors duration-200 text-sm flex items-center space-x-2 hover:underline focus:outline-none"
                         >
-                          <span className={`text-muted-foreground/70 ${getHoverColor(link.name)} transition-colors duration-200`}>
+                          <span className={`text-muted-foreground/70 transition-colors duration-200`}>
                             {getIcon(link.name)}
                           </span>
                           <span>{link.name}</span>
-                        </motion.a>
+                        </a>
                       </li>
                     );
                   })}
@@ -138,30 +127,11 @@ export default function Footer() {
               <ul className="space-y-1">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    {link.external ? (
-                      <motion.a
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-secondary-foreground transition-colors duration-200 text-sm"
-                        whileHover={{ x: 5 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        {link.name}
-                      </motion.a>
-                    ) : (
-                      <motion.div
-                        whileHover={{ x: 5 }}
-                        transition={{ duration: 0.2 }}
-                      >
-                        <Link 
-                          href={link.href}
-                          className="text-muted-foreground hover:text-secondary-foreground transition-colors duration-200 text-sm"
-                        >
-                          {link.name}
-                        </Link>
-                      </motion.div>
-                    )}
+                    <span
+                      className="text-muted-foreground transition-colors duration-200 text-sm cursor-default"
+                    >
+                      {link.name}
+                    </span>
                   </li>
                 ))}
               </ul>

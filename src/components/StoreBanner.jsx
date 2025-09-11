@@ -143,20 +143,19 @@ export default function StoreBanner() {
   };
   const getAccent = (slide) => (isDark && slide.accentDark ? slide.accentDark : slide.accent);
 
-  // Manual navigation only (no autoplay)
-  // Enable continuous auto-scroll with progress
+  // Manual navigation and autoplay (2s per slide)
   useEffect(() => {
     if (isPaused || isTransitioning) return;
     const interval = setInterval(() => {
       setProgress((p) => {
-        const next = p + 6; // ~1.7s per slide (6% every 100ms)
+        const next = p + 10; // 10% every 200ms = 2s per slide
         if (next >= 100) {
           setCurrentSlide((prev) => (prev + 1) % bannerSlides.length);
           return 0;
         }
         return next;
       });
-    }, 100);
+    }, 200);
     return () => clearInterval(interval);
   }, [isPaused, isTransitioning, bannerSlides.length]);
 
@@ -379,6 +378,26 @@ export default function StoreBanner() {
           </motion.div>
         </motion.div>
       </AnimatePresence>
+
+      {/* Manual navigation buttons - middle left and right */}
+      <button
+        aria-label="Previous Slide"
+        onClick={prevSlide}
+        className="absolute top-1/2 left-4 -translate-y-1/2 bg-white/80 dark:bg-black/60 hover:bg-yellow-400 dark:hover:bg-amber-500 text-black dark:text-white rounded-full p-2 shadow-lg border border-gray-200 dark:border-gray-700 transition-colors duration-200 z-20"
+        disabled={isTransitioning}
+        style={{transform: 'translateY(-50%)'}}
+      >
+        <span className="text-2xl font-bold">&#x2039;</span>
+      </button>
+      <button
+        aria-label="Next Slide"
+        onClick={nextSlide}
+        className="absolute top-1/2 right-4 -translate-y-1/2 bg-white/80 dark:bg-black/60 hover:bg-yellow-400 dark:hover:bg-amber-500 text-black dark:text-white rounded-full p-2 shadow-lg border border-gray-200 dark:border-gray-700 transition-colors duration-200 z-20"
+        disabled={isTransitioning}
+        style={{transform: 'translateY(-50%)'}}
+      >
+        <span className="text-2xl font-bold">&#x203A;</span>
+      </button>
 
       {/* Autoplay progress bar */}
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/10 dark:bg-black/30">

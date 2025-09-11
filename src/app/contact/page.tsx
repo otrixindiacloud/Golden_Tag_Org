@@ -68,12 +68,18 @@ export default function Contact() {
   };
 
   return (
-  <main className="min-h-screen overflow-hidden bg-white dark:bg-black">
+  <main className="min-h-screen overflow-hidden bg-white dark:bg-black p-0 m-0">
       {/* Animated Hero Section */}
       <section 
         id="hero"
         ref={(el) => { sectionRefs.current.hero = el; }}
-        className="relative bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-20 overflow-hidden"
+        className="relative py-20 overflow-hidden p-0 m-0 w-full max-w-none"
+        style={{
+          backgroundImage: `url('/7.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'left',
+          backgroundRepeat: 'no-repeat',
+        }}
       >
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
@@ -82,7 +88,7 @@ export default function Contact() {
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-yellow-100/20 to-amber-100/20 dark:from-yellow-600/5 dark:to-amber-600/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
         </div>
 
-        <div className="golden-tag-container relative z-10">
+  <div className="relative z-10 p-0 m-0 w-full max-w-none">
           <div className={`text-center transition-all duration-1000 ${visibleSections.has('hero') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             
             <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 bg-gradient-to-r from-yellow-500 via-amber-500 to-orange-500 bg-clip-text text-transparent">

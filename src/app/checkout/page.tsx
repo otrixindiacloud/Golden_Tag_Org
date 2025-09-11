@@ -48,7 +48,10 @@ export default function Checkout() {
     );
   }
 
-  const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+  const subtotal = cartItems.reduce(
+    (sum: number, item: { price: number; quantity: number }) => sum + (item.price * item.quantity),
+    0
+  ); 
   const shipping = shippingMethod === "express" ? 199 : (subtotal > 5000 ? 0 : 99);
   const tax = subtotal * 0.18; // 18% GST
   const total = subtotal + shipping + tax;
@@ -69,6 +72,7 @@ export default function Checkout() {
       // Process order
       console.log("Order submitted:", { formData, cartItems, total });
       alert("Order placed successfully!");
+      router.push('/');
     }
   };
 
@@ -345,7 +349,13 @@ export default function Checkout() {
             <div className="bg-gray-50 p-6 rounded-lg">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">Order Items</h3>
               <div className="space-y-3">
-                {cartItems.map((item) => (
+                {cartItems.map((item: {
+                  id: string;
+                  name: string;
+                  image: string;
+                  price: number;
+                  quantity: number;
+                }) => (
                   <div key={item.id} className="flex justify-between items-center">
                     <div className="flex items-center space-x-3">
                       <Image

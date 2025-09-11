@@ -12,16 +12,22 @@ const nextConfig = {
 	typescript: {
 		ignoreBuildErrors: true,
 	},
-	images: {
-		remotePatterns: [
-			{
-				protocol: 'https',
-				hostname: 'fakestoreapi.com',
-				port: '',
-				pathname: '/img/**',
-			},
-		],
-	},
+       images: {
+	       remotePatterns: [
+		       {
+			       protocol: 'https',
+			       hostname: 'fakestoreapi.com',
+			       port: '',
+			       pathname: '/img/**',
+		       },
+		       {
+			       protocol: 'https',
+			       hostname: 'cdn.dummyjson.com',
+			       port: '',
+			       pathname: '/product-images/**',
+		       },
+	       ],
+       },
 	webpack: (config, { isServer }) => {
 		// Fix for chunk loading issues
 		if (!isServer) {
